@@ -16,24 +16,24 @@ public class Test12 {
 
              Session session = factory.getCurrentSession())
         {
-            Section voleyball = new Section("Voleyball");
-            Section chees = new Section("Chees");
-            Section math = new Section("Math");
+            Section dance = new Section("Dance");
+/*            Section chees = new Section("Chees");
+            Section math = new Section("Math"); */
 
-            Child child = new Child("Petya", 7);
-/*            Child child2 = new Child("Fenis", 10);
-            Child child3 = new Child("Katya", 10);
-            football.addChildToSection(child1);
-            football.addChildToSection(child2);
-            football.addChildToSection(child3); */
-
-            child.addSectionToChild(voleyball);
-            child.addSectionToChild(chees);
-            child.addSectionToChild(math);
+            Child child1 = new Child("Vasya", 7);
+            Child child2 = new Child("Semis", 10);
+            Child child3 = new Child("Olga", 10);
+            dance.addChildToSection(child1);
+            dance.addChildToSection(child2);
+            dance.addChildToSection(child3);
 
             session.beginTransaction();
 
-            session.save(child);
+            session.persist(dance);
+
+//            session.beginTransaction();
+
+//            session.save(child);
 
             session.getTransaction().commit();
             System.out.println("Done!");
